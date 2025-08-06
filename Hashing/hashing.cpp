@@ -1,5 +1,7 @@
 #include<iostream>
 using namespace std;
+//declaring globally
+int hashh[1000000] = {0};
 
 int main(){
 
@@ -10,9 +12,10 @@ int main(){
         cin >> arr[i];
     }
 //pre-compute , need hash
-int hash[13] = {0};
+// int hash[13] = {0};
+
 for(int i=0; i<n; i++){
-    hash[arr[i]] += 1;
+    hashh[arr[i]] += 1;
 }
 
     int q;
@@ -21,7 +24,7 @@ for(int i=0; i<n; i++){
         int number;
         cin >> number;
 //fetch method
-cout << hash[number] << endl;
+cout << hashh [number] << endl;
     }
     return 0;
 }
