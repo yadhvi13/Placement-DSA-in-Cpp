@@ -1,5 +1,6 @@
 #include<iostream>
 #include<map>
+#include<unordered_map>
 using namespace std;
 
 
@@ -11,9 +12,14 @@ for(int i=0; i < n; i++){
     cin >> arr[i];
 }
 //pre-compute
-map<int,int> mpp;
+unordered_map<int,int> mpp;
 for(int i=0; i<n; i++){
     mpp[arr[i]]++;
+}
+
+//iteration in map
+for(auto it: mpp){
+    cout << it.first << "->" << it.second << endl;
 }
 
 int q;
