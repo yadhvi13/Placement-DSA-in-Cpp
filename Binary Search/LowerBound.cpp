@@ -24,6 +24,7 @@ int lowerBound(vector<int> &nums, int n, int x){
 
 int main(){
     int n;
+    cout << "new code";
     cout << "enter the size of an array: ";
     cin >> n;
 
