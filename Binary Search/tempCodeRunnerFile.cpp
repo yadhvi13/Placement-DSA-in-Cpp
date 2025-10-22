@@ -1,0 +1,1 @@
+  cout << "first and last position of element: [" << lb << ", " << ub - 1 << "]" << endl;
