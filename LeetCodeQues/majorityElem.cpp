@@ -85,6 +85,7 @@ int main(){
             ans = nums[i];
             freq = 1;
         }
+        // if element same hai
         else if(ans == nums[i]){
             freq++;
         }
