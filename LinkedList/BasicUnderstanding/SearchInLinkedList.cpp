@@ -49,33 +49,21 @@ void printLinkedList(){
         temp= temp->next;
     }
     cout << "NULL" << endl;
-}  
+} 
 
-// void insert in Middle of LINKED LIST
-void insert(int val, int pos){
-    if(pos<0){
-        cout << "Invalid Position\n";
-        return;
-    }
-
-    if(pos==0){
-        push_front(val);
-        return;
-    }
-
-    // creating new Node temp
+// 
+int search(int key){
     Node* temp = head;
-    for(int i=0; i<pos-1; i++){
-        if(temp == NULL){
-            cout << "invalid pos\n";
-            return ;
+    int idx = 0;
+    while(temp != NULL){
+        if(temp->data == key){
+            return idx;
         }
-        temp= temp->next;
+
+        temp = temp->next;
+        idx++;
     }
-    
-    Node* newNode = new Node(val);
-    newNode->next = temp->next;
-    temp->next = newNode;
+    return -1;
 }
 };
 
@@ -88,9 +76,10 @@ int main(){
     LL.push_front(3);
     LL.push_front(2);
     LL.push_front(1);
-    LL.insert(4,1);
+    // LL.insert(4,1);
 
     LL.printLinkedList();
+    cout << LL.search(4) << endl;
 
 
     return 0;
