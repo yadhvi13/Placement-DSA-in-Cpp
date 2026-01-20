@@ -15,7 +15,7 @@ Node* middle(Node* head) {
     Node* slow = head;
     Node* fast = head;
 
-    while (fast && fast->next) {
+    while (fast != NULL && fast->next != NULL) {
         slow = slow->next;
         fast = fast->next->next;
     }
@@ -28,6 +28,7 @@ int main() {
     head->next->next = new Node(3);
     head->next->next->next = new Node(4);
     head->next->next->next->next = new Node(5);
+    head->next->next->next->next->next = new Node(7);
 
     cout << middle(head)->data;
     return 0;
