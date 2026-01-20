@@ -45,17 +45,36 @@ void printLL(){
     }
     cout << "NULL" << endl; //printing the next line 
   }
+
+// reverse a linked list
+void reverseLinkeList(){
+    Node* prev = NULL;
+    Node* curr = head;
+    Node* nextNode = NULL;
+
+    while(curr != NULL){
+        nextNode = curr->next; //store next
+        curr->next = prev;  // reverse link
+        prev = curr;
+        curr = nextNode;
+    }
+    head = prev; //update head;
+}
 };
 
 
 int main(){
     List LL;
 // pushing value in LL 
-    LL.push_front(1);
-    LL.push_front(2);
     LL.push_front(3);
+    LL.push_front(2);
+    LL.push_front(1);
 
     // calling print linkedlist function
+    LL.printLL();
+
+    LL.reverseLinkeList();
+    cout << "reversed linked list: ";
     LL.printLL();
 
     return 0;
