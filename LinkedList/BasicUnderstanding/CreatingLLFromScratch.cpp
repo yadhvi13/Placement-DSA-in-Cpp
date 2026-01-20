@@ -53,6 +53,38 @@ void push_back(int val){
     }
 }
 
+void pop_front(){
+    // if LL is empty or not
+    if(head == NULL){
+        cout << "LL is empty \n";
+        return;
+    }
+
+    Node* temp = head;
+    head = head->next;
+    temp->next = NULL;
+    delete temp;
+
+}
+
+void pop_back(){
+    // if LL is empty or not
+    if(head == NULL){
+        cout << "LL is empty\n";
+        return ;
+    }
+
+    // temp referring to head
+    Node* temp = head;
+    // for prev node of tail
+    while(temp->next != tail){
+        temp = temp->next;
+    }
+    temp->next = NULL;
+    delete tail;
+    tail = temp;
+}
+
 // printing function for linkedList
 void printLL(){
     Node* temp = head;
@@ -71,7 +103,10 @@ int main(){
     LL.push_front(2);
     LL.push_front(4);
 
-    LL.push_back(6);    
+    LL.push_back(6); 
+    
+    LL.pop_front();
+    LL.pop_back();
 
     // calling printing function
     LL.printLL();
