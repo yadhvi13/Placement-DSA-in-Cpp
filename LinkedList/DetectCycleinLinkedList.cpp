@@ -51,6 +51,31 @@ bool isCycle(){
     return false;
 }
 
+Node* detectCycle(){
+    Node* slow = head;
+    Node* fast = head;
+
+    while(fast!= NULL && fast->next != NULL){
+        slow = slow->next;
+        fast = fast->next->next;
+        if(slow == fast){
+            break;
+        }
+    }
+
+    // no cycle
+    if (fast == NULL || fast->next == NULL)
+            return NULL;
+
+
+    slow = head;
+    while(slow != fast){
+        slow = slow->next;
+        fast = fast->next;
+    }
+    return slow;
+}
+
     // Printing LINKED LIST
     void printLL() {
         Node* temp = head;
@@ -75,7 +100,13 @@ int main() {
     else{
         cout << "no cycle\n";
     }
-
+     
+    Node* start = LL.detectCycle();
+    if (start)
+        cout << "Cycle starts at node with value: " << start->data << endl;
+    else
+        cout << "No cycle start node\n";
+        
     LL.printLL();
     return 0;
 }
