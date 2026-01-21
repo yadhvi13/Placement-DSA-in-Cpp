@@ -5,6 +5,8 @@ class Node {
 public:
     int data;
     Node* next;
+
+    // constructor
     Node(int val) {
         data = val;
         next = NULL;
