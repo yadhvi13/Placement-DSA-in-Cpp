@@ -10,7 +10,6 @@
 //     }
 
 #include <iostream>
-#include <string>
 #include <unordered_map>
 using namespace std;
 
@@ -27,16 +26,33 @@ bool isIsomorphic(string s, string t)
         char a = s[i];
         char b = t[i];
 
-        // If mapping exists, check consistency
         if (mapST.count(a) && mapST[a] != b)
             return false;
+
         if (mapTS.count(b) && mapTS[b] != a)
             return false;
 
-        // Create mapping if not present
         mapST[a] = b;
         mapTS[b] = a;
     }
 
     return true;
-};
+}
+
+int main()
+{
+    string s, t;
+
+    cout << "Enter first string: ";
+    cin >> s;
+
+    cout << "Enter second string: ";
+    cin >> t;
+
+    if (isIsomorphic(s, t))
+        cout << "True" << endl;
+    else
+        cout << "False" << endl;
+
+    return 0;
+}
