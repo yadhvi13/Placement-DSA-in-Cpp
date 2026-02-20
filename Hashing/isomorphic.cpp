@@ -18,22 +18,22 @@ bool isIsomorphic(string s, string t)
     if (s.length() != t.length())
         return false;
 
-    unordered_map<char, char> mapST;
-    unordered_map<char, char> mapTS;
+    unordered_map<char, char> mapISO;
+    unordered_map<char, char> maISO;
 
     for (int i = 0; i < s.length(); i++)
     {
         char a = s[i];
         char b = t[i];
 
-        if (mapST.count(a) && mapST[a] != b)
+        if (mapISO.count(a) && mapISO[a] != b)
             return false;
 
-        if (mapTS.count(b) && mapTS[b] != a)
+        if (maISO.count(b) && maISO[b] != a)
             return false;
 
-        mapST[a] = b;
-        mapTS[b] = a;
+        mapISO[a] = b;
+        maISO[b] = a;
     }
 
     return true;
