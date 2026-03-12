@@ -7,7 +7,7 @@ bool isValid(string s) {
     stack<char> st;
 
     for (char c : s) {
-        // If opening bracket, push to stack
+      
         if (c == '(' || c == '{' || c == '[') {
             st.push(c);
         }
@@ -26,7 +26,7 @@ bool isValid(string s) {
         }
     }
 
-    // Stack should be empty if valid
+    
     return st.empty();
 }
 
@@ -37,9 +37,9 @@ int main() {
     cin >> s;
 
     if (isValid(s))
-        cout << "Valid Parentheses ✅" << endl;
+        cout << "Valid Parentheses" << endl;
     else
-        cout << "Invalid Parentheses ❌" << endl;
+        cout << "Invalid Parentheses" << endl;
 
     return 0;
 }
