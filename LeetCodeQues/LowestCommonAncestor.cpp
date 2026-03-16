@@ -32,7 +32,7 @@ TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q){
 
 int main(){
 
-    TreeNode* root = new TreeNode(9);
+    TreeNode* root = new TreeNode(3);
     root->left = new TreeNode(5);
     root->right = new TreeNode(1);
     root->left->left = new TreeNode(6);
