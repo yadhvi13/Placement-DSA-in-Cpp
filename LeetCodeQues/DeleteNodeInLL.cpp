@@ -20,7 +20,7 @@ void deleteNode(ListNode* node) {
     delete temp;
 }
 
-// Helper function to print list
+// function to print list
 void printList(ListNode* head) {
     while (head != NULL) {
         cout << head->val << " -> ";
