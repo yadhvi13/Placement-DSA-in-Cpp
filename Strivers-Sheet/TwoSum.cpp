@@ -1,21 +1,48 @@
 #include<iostream>
 #include <vector>
+#include<algorithm>
 #include <unordered_map>
 using namespace std;
 
+// vector<int> twoSum(vector<int>& nums, int target){
+//     int n = nums.size();
+
+//     unordered_map<int, int> mp;
+//     for(int i=0; i<n; i++){
+//         int a = target - nums[i];
+
+//         if(mp.find(a) != mp.end()){
+//             return {mp[a], i};
+//         }
+//         mp[nums[i]] = i;
+//     }
+//     return {};
+// }
+
+
+
+// ----------------- TWO POINTER---------------------------------------
 vector<int> twoSum(vector<int>& nums, int target){
     int n = nums.size();
+    int left = 0;
+    int right = n-1;
 
-    unordered_map<int, int> mp;
-    for(int i=0; i<n; i++){
-        int a = target - nums[i];
+    sort(nums.begin(), nums.end());
 
-        if(mp.find(a) != mp.end()){
-            return {mp[a], i};
+    while(left < right){
+        int sum = nums[left] + nums[right];
+
+        if(sum == target) return {left,right};
+
+        if(sum < target){
+            left ++;
         }
-        mp[nums[i]] = i;
+        else{
+            right--;
+        }
     }
     return {};
+
 }
 
 int main(){
