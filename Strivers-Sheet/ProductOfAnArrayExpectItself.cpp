@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int maxSubArray(vector<int>& nums) {
+    int currSum = nums[0];
+    int maxSum = nums[0];
+
+    for (int i = 1; i < nums.size(); i++) {
+        currSum = max(nums[i], currSum + nums[i]);
+        maxSum = max(maxSum, currSum);
+    }
+
+    return maxSum;
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    vector<int> nums(n);
+
+    for (int i = 0; i < n; i++) {
+        cin >> nums[i];
+    }
+
+    cout << maxSubArray(nums);
+
+    return 0;
+}
